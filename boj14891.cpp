@@ -6,6 +6,7 @@
 //  Copyright © 2019년 YUNJU. All rights reserved.
 //
 
+
 #include <iostream>
 #include <math.h>
 
@@ -38,7 +39,7 @@ int main() {
 		init(a, dir);
 		rotate(a, dir);
 		
-		/*
+		
 		// 출력 검사
 		for(int k = 0 ; k<4 ; k++){
 			for(int j = 0 ; j<8 ; j++){
@@ -46,7 +47,7 @@ int main() {
 			}
 			printf("\n");
 		}
-		 */
+		 
 	}
 	
 	int sum = 0;
@@ -142,3 +143,4 @@ int restRotate(int a, int dir) {
 	
 	return 0;
 }
+
