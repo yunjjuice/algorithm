@@ -9,7 +9,6 @@ import java.util.StringTokenizer;
 
 public class BOJ15649 {
 	static int n, m;
-	static int[] arr;
 	static boolean[] used;
 	static int[] pick;
 	public static void main(String[] args) throws IOException {
@@ -17,12 +16,9 @@ public class BOJ15649 {
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 		n = Integer.parseInt(st.nextToken());
 		m = Integer.parseInt(st.nextToken());
-		arr = new int[n+1];
 		used = new boolean[n+1];
-		pick = new int[m+1];
-		for (int i = 1; i <= n; i++) {
-			arr[i] = i;
-		}
+		pick = new int[m];
+
 		// 1~N까지 자연수 중에 M개 선택
 		solve(0);
 	}
@@ -35,7 +31,7 @@ public class BOJ15649 {
 			System.out.println();
 			return;
 		} 
-		for (int i = 1; i < arr.length; i++) {
+		for (int i = 1; i <= n; i++) {
 			if(!used[i]){
 				pick[index] = i;
 				used[i] = true;
