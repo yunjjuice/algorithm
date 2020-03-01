@@ -10,8 +10,6 @@ import java.util.StringTokenizer;
 public class SWEA1952 {
 	static int[] price; // 이용권 가격 1일 1달 3달 1년
 	static int[] month; // 각 달의 최소 금액(일 단위랑 1달권만 비교)
-	static int[][] table;
-	static boolean[] fin; // 계산 끝난 달은 더이상 계산하지 못하도록
 	static int ans;
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
