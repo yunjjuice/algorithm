@@ -1,5 +1,17 @@
 /*
  * SWEA 1952 수영장
+ * 
+ * 수정사항
+ * ans에 바로 1년권 가격 넣은 뒤 비교함
+ * calc 메서드에서 sum이 ans보다 크면 가지치기해줌
+ * 
+ * 수정 전
+ * 메모리 : 21,548 kb
+ * 시간 : 109 ms
+ * 
+ * 수정 후
+ * 메모리 : 23,304 kb
+ * 시간 : 96 ms
  */
 
 import java.io.BufferedReader;
@@ -33,16 +45,16 @@ public class SWEA1952 {
 //			System.out.println(Arrays.toString(price));
 //			System.out.println(Arrays.toString(month));
 						
-			ans = Integer.MAX_VALUE;
+			ans = price[3];
 			calc(0, 0);
-			if(ans > price[3])
-				ans = price[3];
 			
 			System.out.println("#" + t + " " + ans);
 		}
 	}
 	
 	static void calc(int index, int sum) {
+		if(sum >= ans)
+			return;
 //		System.out.println("index : " + index + " sum : "+ sum);
 		if(index >= 12) {
 			ans = Math.min(sum, ans);
