@@ -1,5 +1,13 @@
 /*
  * SWEA 1247 최적 경로 D5
+ * 
+ * 1. 가지치기 안 했을 때 (가지치기라 하기도 뭐하지만..)
+ * 메모리 : 26,136 kb
+ * 시간 : 2,326 ms
+ * 
+ * 2. 했을 때
+ * 메모리 : 27,844 kb
+ * 시간 : 2,013 ms
  */
 
 import java.io.BufferedReader;
@@ -59,6 +67,8 @@ public class SWEA1247 {
 //				System.out.print(np[i] + " ");
 //				System.out.println(list.get(np[i]).x + " " + list.get(np[i]).y);
 				sum += (Math.abs(list.get(np[i]).x - list.get(np[i+1]).x) + Math.abs(list.get(np[i]).y - list.get(np[i+1]).y)); 
+				if(sum >= ans)
+					return;
 //				System.out.println("for : " + sum);
 			}
 			
