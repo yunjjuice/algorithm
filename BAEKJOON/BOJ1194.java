@@ -38,7 +38,7 @@ public class BOJ1194 {
 //			System.out.println(Arrays.toString(map[i]));
 //		}
 		
-		visited = new boolean[N][M][1 << 7]; // key 비트마스크 사용, 최대 6개의 키를 가질 경우 111111
+		visited = new boolean[N][M][1 << 6]; // key 비트마스크 사용, 최대 6개의 키를 가질 경우 111111
 		System.out.println(bfs());
 		
 		
@@ -70,10 +70,10 @@ public class BOJ1194 {
 					
 					if(map[nx][ny] == '#') continue;
 					if('a'<= map[nx][ny] && map[nx][ny] <= 'f') { 
-						key |= 1 << (map[nx][ny] - 'a' + 1);
+						key |= 1 << (map[nx][ny] - 'a');
 					} 
 					if('A' <= map[nx][ny] && map[nx][ny] <= 'F') {
-						int door = map[nx][ny] - 'A' + 1;
+						int door = map[nx][ny] - 'A';
 						if((key & (1<<door)) == 0) {  // 키가 없다
 							continue;
 						}
