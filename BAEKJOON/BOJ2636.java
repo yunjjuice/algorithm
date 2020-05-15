@@ -16,7 +16,6 @@ public class BOJ2636 {
 	static int[][] map;
 	static boolean[][] visited;
 	static ArrayList<Pos> list; // 치즈의 테두리를 저장할 배열
-	static int piece; // 치즈 개수
 	static int cheese;
 	static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 	public static void main(String[] args) throws IOException {
@@ -47,7 +46,6 @@ public class BOJ2636 {
 			time++;
 			visited = new boolean[N][M]; // 한 시간마다 달라지므로
 			list = new ArrayList<>();
-			piece = 0;
 			
 //			외부 공기를 맵에서 -1로 바꿔준다
 			outside(0, 0);
