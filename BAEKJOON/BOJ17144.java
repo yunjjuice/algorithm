@@ -60,7 +60,6 @@ public class BOJ17144 {
 	}
 
 	public static void spread() {
-		int size = q.size();
 		int[][] copy = new int[R][C];
 		copy[airCleaner[0][0]][airCleaner[0][1]] = -1;
 		copy[airCleaner[1][0]][airCleaner[1][1]] = -1;
