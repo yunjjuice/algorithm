@@ -68,18 +68,23 @@ public class BOJ16236 {
 		q.offer(new Fish(x, y, 0));
 		visit[x][y] = true;
 		while(!q.isEmpty()) {
-			Fish cur = q.poll();
-			for (int i = 0; i < 4; i++) {
-				int nx = cur.x + dir[i][0];
-				int ny = cur.y + dir[i][1];
-				if (nx < 0 || nx >= N || ny < 0 || ny >= N) continue;
-				if (visit[nx][ny] || map[nx][ny] > size) continue;
-				if (0 < map[nx][ny] && map[nx][ny] < size) fishes.add(new Fish(nx, ny, cur.dist+1));
-				q.offer(new Fish(nx, ny, cur.dist+1));
-				visit[nx][ny] = true;
+			int qs = q.size();
+			for (int s = 0; s < qs; s++) {
+				Fish cur = q.poll();
+				for (int i = 0; i < 4; i++) {
+					int nx = cur.x + dir[i][0];
+					int ny = cur.y + dir[i][1];
+					if (nx < 0 || nx >= N || ny < 0 || ny >= N) continue;
+					if (visit[nx][ny] || map[nx][ny] > size) continue;
+					if (0 < map[nx][ny] && map[nx][ny] < size) {
+						fishes.add(new Fish(nx, ny, cur.dist+1));
+					}
+					q.offer(new Fish(nx, ny, cur.dist+1));
+					visit[nx][ny] = true;
+				}
 			}
+			if (fishes.size() > 0) break;
 		}
-		if (fishes.size() > 0) return;
 	}
 
 	static class Fish implements Comparable<Fish> {
