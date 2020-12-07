@@ -1,5 +1,5 @@
 /*
- * BOJ 16236 ¾Æ±â »ó¾î
+ * BOJ 16236 ì•„ê¸° ìƒì–´
  * Gold 4
  * https://www.acmicpc.net/problem/16236
  */
@@ -40,7 +40,7 @@ public class BOJ16236 {
 			}
 		}
 		
-		// »ó¾î ÀÌµ¿
+		// ìƒì–´ ì´ë™
 		boolean flag = true;
 		while(flag) {
 			bfs(sx, sy);
