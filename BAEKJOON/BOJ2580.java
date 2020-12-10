@@ -1,5 +1,5 @@
 /*
- * BOJ 2580 ½ºµµÄí
+ * BOJ 2580 ìŠ¤ë„ì¿ 
  * Gold 4
  * https://www.acmicpc.net/problem/2580
  */
@@ -52,12 +52,12 @@ public class BOJ2580 {
 	}
 	
 	private static boolean check(int x, int y, int value) {
-		// °¡·Î
+		// ê°€ë¡œ
 		for (int i = 0; i < 9; i++) {
 			if (y != i && map[x][i] == value)
 				return false;
 		}
-		// ¼¼·Î
+		// ì„¸ë¡œ
 		for (int i = 0; i < 9; i++) {
 			if (x != i && map[i][y] == value)
 				return false;
