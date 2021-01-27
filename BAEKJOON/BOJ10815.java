@@ -37,8 +37,9 @@ public class BOJ10815 {
 		
 		while (l <= r) {
 			m = (l + r) / 2;
-			if (num[m] == n) return 1;
-			if (n >= num[m]) {
+			if (num[m] == n) {
+				return 1;
+			} else if (num[m] < n) {
 				l = m + 1;
 			} else {
 				r = m - 1;
