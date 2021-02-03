@@ -24,6 +24,16 @@ public class BOJ2470 {
 		int sum = 0, ans1 = 0, ans2 = 0;
 		while (start < end) {
 			sum = num[start] + num[end];
+			if (sum == 0) {
+				if (num[start] <= num[end]) {
+					ans1 = num[start];
+					ans2 = num[end];
+				} else {
+					ans1 = num[end];
+					ans2 = num[start];
+				}
+				break;
+			}
 			if (min > Math.abs(sum)) {
 				min = Math.abs(sum);
 				if (num[start] <= num[end]) {
