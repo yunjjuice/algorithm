@@ -12,14 +12,14 @@ public class BOJ1935 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
 		String str = br.readLine();
-		float[] num = new float[26];
+		double[] num = new double[26];
 		for (int i = 0; i < N; i++) {
 			num[i] = Integer.parseInt(br.readLine());
 		}
 		
-		Stack<Float> st = new Stack<>();
+		Stack<Double> st = new Stack<>();
 		for (int i = 0; i < str.length(); i++) {
-			float a = 0, b = 0;
+			double a = 0, b = 0;
 			switch (str.charAt(i)) {
 			case '+':
 				b = st.pop();
